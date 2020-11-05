@@ -27,11 +27,14 @@ typedef NS_ENUM(NSUInteger, TTAlertArrowDirection) {
 
 + (instancetype)defaultBus;
 
+// - popoverAlert
 @property (nonatomic, assign, readwrite) float arrowBase;
 @property (nonatomic, assign, readwrite) float arrowHeight;
 @property (nonatomic, assign, readwrite) float arrowOffset;
 @property (nonatomic, strong, readwrite) UIColor *backgroundColor;
 @property (nonatomic, strong, readwrite) UIColor *separatorColor;
+
+// -
 
 @end
 

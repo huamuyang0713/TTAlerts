@@ -94,6 +94,10 @@ CGFloat space = 13.0f;
     [self setupUI];
 }
 
+- (void)dealloc {
+    
+}
+
 #pragma mark - tableView delegate datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -123,10 +127,6 @@ CGFloat space = 13.0f;
     if (self.onItemClickedCB) {
         self.onItemClickedCB(row);
     }
-}
-
-- (BOOL)needRefreshLoad {
-    return NO;
 }
 
 #pragma mark -
@@ -171,7 +171,6 @@ CGFloat space = 13.0f;
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
-        _tableView.separatorColor = UIColor.whiteColor;
         _tableView.separatorColor = [TTDataBus defaultBus].separatorColor;
         _tableView.scrollEnabled = NO;
         _tableView.delegate = self;

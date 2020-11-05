@@ -17,7 +17,7 @@
             dataBus = [[TTDataBus alloc] init];
             dataBus.arrowBase = 12;
             dataBus.arrowHeight = 6;
-            dataBus.arrowOffset = 6;
+            dataBus.arrowOffset = TTTableCellWidth / 2 - 6;
             dataBus.backgroundColor = UIColorHex(0x4B4C4D);
             dataBus.separatorColor = UIColorHex(0xEEEEEE);
         }

@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithTargetView:(UIView *)targetView;
 - (instancetype)initWithTargetBarItem:(UIBarButtonItem *)targetBarItem;
 
+- (void)dismissPopOver;
 
 /**
  * 配置完成 显示alert

@@ -12,7 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIBarButtonItem (TTPopoverPresentationAlert)
 
-- (void)ttAlertWithConfig:(void(^)(TTPopoverPresentationAlertMaker *maker))block;
+- (void)ttPopoverPresentationAlertWithConfig:(void(^)(TTPopoverPresentationAlertMaker *maker))block onSelectItem:(TTPopAlertTapedItem)selectCallBack;
+
+- (void)dismissPopOverAlert;
+
+
+//private
+@property (nonatomic, strong, readonly, nullable) TTPopoverPresentationAlertMaker *configurationMaker;
 
 @end
 

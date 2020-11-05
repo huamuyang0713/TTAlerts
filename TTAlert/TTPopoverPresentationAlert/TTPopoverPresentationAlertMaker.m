@@ -29,6 +29,9 @@
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *icons;
 
+@property (nonatomic, strong) UIViewController *topViewController;
+@property (nonatomic, assign) BOOL isCustomArrowOffset;
+
 @end
 
 @implementation TTPopoverPresentationAlertMaker
@@ -51,6 +54,10 @@
     return self;
 }
 
+- (void)dealloc {
+    
+}
+
 - (void)baseSetUp {
     _direction = TTAlertArrowDirectionUp;
     _tableWidth = TTTableCellWidth;
@@ -58,15 +65,26 @@
     _bgCornerRadius = 4;
     [TTDataBus defaultBus].arrowBase = 12;
     [TTDataBus defaultBus].arrowHeight = 6;
-    [TTDataBus defaultBus].arrowOffset = TTTableCellWidth / 2;
+    [TTDataBus defaultBus].arrowOffset = TTTableCellWidth / 2 - 6;
+    [TTDataBus defaultBus].backgroundColor = UIColorHex(0x4B4C4D);
+    [TTDataBus defaultBus].separatorColor = UIColorHex(0xEEEEEE);
 }
 
 - (void)showPopAlert {
+    [self checkDefaultData];
+    
     UIViewController *currentVC = [self topViewController];
     TTPopoverViewController *popAlert = [self popAlert];
     
     if (currentVC) {
+        self.topViewController = currentVC;
         [currentVC presentViewController:popAlert animated:YES completion:nil];
+    }
+}
+
+- (void)dismissPopOver {
+    if (self.topViewController) {
+        [self.topViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -134,6 +152,7 @@
     TTMakerInputCallBack block = ^TTPopoverPresentationAlertMaker *(id i){
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([strongSelf isFloat:i]) {
+            strongSelf.isCustomArrowOffset = YES;
             [TTDataBus defaultBus].arrowOffset = [i floatValue];
         }
         return strongSelf;
@@ -242,6 +261,19 @@
     return [scan scanFloat:&val] && [scan isAtEnd];
 }
 
+- (void)checkDefaultData {
+    TTDataBus *bus = [TTDataBus defaultBus];
+    if (!self.isCustomArrowOffset) {
+        CGFloat offset;
+        if (self.direction == TTAlertArrowDirectionUp || self.direction == TTAlertArrowDirectionDown) {
+            offset = self.tableWidth / 2 - bus.arrowBase / 2;
+        } else {
+            offset = self.tableCellHeight * self.titles.count / 2 - bus.arrowHeight / 2;
+        }
+        [TTDataBus defaultBus].arrowOffset = offset;
+    }
+}
+
 - (TTPopoverViewController *)popAlert {
 
     TTPopoverViewController *popAlert = [[TTPopoverViewController alloc] initWithTitles:self.titles andIcons:self.icons];
@@ -250,7 +282,7 @@
     popAlert.modalPresentationStyle = UIModalPresentationPopover;
     popAlert.popoverPresentationController.delegate = self;
     popAlert.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
-    popAlert.popoverPresentationController.backgroundColor = UIColorHex(0x4B4C4D);
+    popAlert.popoverPresentationController.backgroundColor = [TTDataBus defaultBus].backgroundColor;
     popAlert.popoverPresentationController.canOverlapSourceViewRect = YES;
     popAlert.popoverPresentationController.popoverBackgroundViewClass = TTAlertBackgroundView.class;
     
@@ -297,7 +329,6 @@
     UIViewController *currentViewController = mainWindow.rootViewController;
     
     if (currentViewController.presentedViewController != nil) {
-        NSLog(@"%@", currentViewController.presentedViewController);
         currentViewController = currentViewController.presentedViewController;
     }
     
