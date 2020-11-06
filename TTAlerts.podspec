@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "TTAlert"
+  spec.name         = "TTAlerts"
   spec.version      = "1.0.0"
   spec.summary      = "PopoverPresentationController"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
     2.方便的链式调用
                    DESC
 
-  spec.homepage     = "https://github.com/heqiang945/TTAlert"
+  spec.homepage     = "https://github.com/heqiang945/TTAlerts"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -81,7 +81,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/heqiang945/TTAlert.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/heqiang945/TTAlerts.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
