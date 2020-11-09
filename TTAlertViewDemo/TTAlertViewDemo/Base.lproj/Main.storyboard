@@ -32,17 +32,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAN-jQ-IlU">
-                                <rect key="frame" x="208" y="172" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAN-jQ-IlU">
+                                <rect key="frame" x="232.5" y="178" width="59" height="30"/>
+                                <state key="normal" title="popAlert"/>
                                 <connections>
-                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TG8-iN-Zy6"/>
+                                    <action selector="popAlertButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yuv-dg-uc5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgw-W6-9mz">
+                                <rect key="frame" x="150" y="178" width="32" height="30"/>
+                                <state key="normal" title="alert"/>
+                                <connections>
+                                    <action selector="alertButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZDi-CS-Kwd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Y3-bw-1Sx">
+                                <rect key="frame" x="187.5" y="258" width="39" height="30"/>
+                                <state key="normal" title="sheet"/>
+                                <connections>
+                                    <action selector="sheetButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o0w-U5-EGi"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iAN-jQ-IlU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xgw-W6-9mz" secondAttribute="trailing" constant="8" symbolic="YES" id="92X-bQ-AqM"/>
+                            <constraint firstItem="9Y3-bw-1Sx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Deg-sJ-rsb"/>
+                            <constraint firstItem="Xgw-W6-9mz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="OFa-eg-rMK"/>
+                            <constraint firstItem="Xgw-W6-9mz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="cFu-Jf-VSc"/>
+                            <constraint firstItem="iAN-jQ-IlU" firstAttribute="centerY" secondItem="Xgw-W6-9mz" secondAttribute="centerY" id="dXd-zV-cVN"/>
+                            <constraint firstItem="iAN-jQ-IlU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="55" id="hOX-os-ccV"/>
+                            <constraint firstItem="9Y3-bw-1Sx" firstAttribute="top" secondItem="Xgw-W6-9mz" secondAttribute="bottom" constant="50" id="sWD-F1-nWP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4AP-BO-beE">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="vw2-7o-n0x">

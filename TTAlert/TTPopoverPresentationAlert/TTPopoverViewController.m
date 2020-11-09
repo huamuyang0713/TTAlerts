@@ -94,10 +94,6 @@ CGFloat space = 13.0f;
     [self setupUI];
 }
 
-- (void)dealloc {
-    
-}
-
 #pragma mark - tableView delegate datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

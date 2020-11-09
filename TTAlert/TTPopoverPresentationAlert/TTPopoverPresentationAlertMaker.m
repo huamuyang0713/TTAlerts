@@ -54,10 +54,6 @@
     return self;
 }
 
-- (void)dealloc {
-    
-}
-
 - (void)baseSetUp {
     _direction = TTAlertArrowDirectionUp;
     _tableWidth = TTTableCellWidth;

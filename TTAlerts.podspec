@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TTAlerts"
-  spec.version      = "1.0.0"
-  spec.summary      = "PopoverPresentationController"
+  spec.version      = "1.0.1"
+  spec.summary      = "alert"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,8 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
     1.封装popoverPresentationController，并可自定义部分属性
-    2.方便的链式调用
+    2.UIAlertController自定义文案/font/color
+    3.方便的链式调用
                    DESC
 
   spec.homepage     = "https://github.com/heqiang945/TTAlerts"

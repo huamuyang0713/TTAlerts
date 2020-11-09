@@ -31,8 +31,5 @@
     objc_setAssociatedObject(self, @selector(configurationMaker), configurationMaker, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)dealloc {
-    self.configurationMaker = nil;
-}
 
 @end

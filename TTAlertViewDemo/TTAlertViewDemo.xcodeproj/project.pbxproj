@@ -22,6 +22,11 @@
 		584CEE842551599E00DE046C /* TTAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEE832551599E00DE046C /* TTAlertBackgroundView.m */; };
 		584CEE8A2552399E00DE046C /* TTDataBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEE892552399E00DE046C /* TTDataBus.m */; };
 		584CEE9F2552A78E00DE046C /* UIBarButtonItem+TTPopoverPresentationAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEE9E2552A78E00DE046C /* UIBarButtonItem+TTPopoverPresentationAlert.m */; };
+		584CEEC22558E5F800DE046C /* UIViewController+TTAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEEC12558E5F700DE046C /* UIViewController+TTAlert.m */; };
+		584CEECB2558E65D00DE046C /* TTAlertMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEECA2558E65D00DE046C /* TTAlertMaker.m */; };
+		584CEED12558E9B900DE046C /* TTAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEED02558E9B900DE046C /* TTAlertViewController.m */; };
+		584CEED72558E9D100DE046C /* TTAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEED62558E9D100DE046C /* TTAlertAction.m */; };
+		584CEEDD2559208700DE046C /* TTActionSheetMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEEDC2559208700DE046C /* TTActionSheetMaker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,16 @@
 		584CEE892552399E00DE046C /* TTDataBus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTDataBus.m; sourceTree = "<group>"; };
 		584CEE9D2552A78E00DE046C /* UIBarButtonItem+TTPopoverPresentationAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TTPopoverPresentationAlert.h"; sourceTree = "<group>"; };
 		584CEE9E2552A78E00DE046C /* UIBarButtonItem+TTPopoverPresentationAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TTPopoverPresentationAlert.m"; sourceTree = "<group>"; };
+		584CEEC02558E5F700DE046C /* UIViewController+TTAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TTAlert.h"; sourceTree = "<group>"; };
+		584CEEC12558E5F700DE046C /* UIViewController+TTAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TTAlert.m"; sourceTree = "<group>"; };
+		584CEEC92558E65D00DE046C /* TTAlertMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAlertMaker.h; sourceTree = "<group>"; };
+		584CEECA2558E65D00DE046C /* TTAlertMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAlertMaker.m; sourceTree = "<group>"; };
+		584CEECF2558E9B900DE046C /* TTAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAlertViewController.h; sourceTree = "<group>"; };
+		584CEED02558E9B900DE046C /* TTAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAlertViewController.m; sourceTree = "<group>"; };
+		584CEED52558E9D100DE046C /* TTAlertAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAlertAction.h; sourceTree = "<group>"; };
+		584CEED62558E9D100DE046C /* TTAlertAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAlertAction.m; sourceTree = "<group>"; };
+		584CEEDB2559208700DE046C /* TTActionSheetMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTActionSheetMaker.h; sourceTree = "<group>"; };
+		584CEEDC2559208700DE046C /* TTActionSheetMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTActionSheetMaker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +174,7 @@
 		584CEE6825512A7300DE046C /* TTAlert */ = {
 			isa = PBXGroup;
 			children = (
+				584CEEBF2558E5B800DE046C /* TTAlertView */,
 				584CEE7225512BB500DE046C /* TTPopoverPresentationAlert */,
 				584CEE882552399E00DE046C /* TTDataBus.h */,
 				584CEE892552399E00DE046C /* TTDataBus.m */,
@@ -182,6 +198,23 @@
 				584CEE9E2552A78E00DE046C /* UIBarButtonItem+TTPopoverPresentationAlert.m */,
 			);
 			path = TTPopoverPresentationAlert;
+			sourceTree = "<group>";
+		};
+		584CEEBF2558E5B800DE046C /* TTAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				584CEEC02558E5F700DE046C /* UIViewController+TTAlert.h */,
+				584CEEC12558E5F700DE046C /* UIViewController+TTAlert.m */,
+				584CEEC92558E65D00DE046C /* TTAlertMaker.h */,
+				584CEECA2558E65D00DE046C /* TTAlertMaker.m */,
+				584CEEDB2559208700DE046C /* TTActionSheetMaker.h */,
+				584CEEDC2559208700DE046C /* TTActionSheetMaker.m */,
+				584CEECF2558E9B900DE046C /* TTAlertViewController.h */,
+				584CEED02558E9B900DE046C /* TTAlertViewController.m */,
+				584CEED52558E9D100DE046C /* TTAlertAction.h */,
+				584CEED62558E9D100DE046C /* TTAlertAction.m */,
+			);
+			path = TTAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584CEED72558E9D100DE046C /* TTAlertAction.m in Sources */,
 				584CEE8A2552399E00DE046C /* TTDataBus.m in Sources */,
 				584CEE3825512A3F00DE046C /* ViewController.m in Sources */,
 				584CEE3225512A3F00DE046C /* AppDelegate.m in Sources */,
@@ -321,8 +355,12 @@
 				584CEE7E2551523100DE046C /* TTPopoverViewController.m in Sources */,
 				584CEE842551599E00DE046C /* TTAlertBackgroundView.m in Sources */,
 				584CEE3525512A3F00DE046C /* SceneDelegate.m in Sources */,
+				584CEED12558E9B900DE046C /* TTAlertViewController.m in Sources */,
 				584CEE7525512BD800DE046C /* TTPopoverPresentationAlertMaker.m in Sources */,
+				584CEEDD2559208700DE046C /* TTActionSheetMaker.m in Sources */,
+				584CEECB2558E65D00DE046C /* TTAlertMaker.m in Sources */,
 				584CEE9F2552A78E00DE046C /* UIBarButtonItem+TTPopoverPresentationAlert.m in Sources */,
+				584CEEC22558E5F800DE046C /* UIViewController+TTAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
