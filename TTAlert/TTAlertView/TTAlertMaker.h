@@ -45,8 +45,16 @@ typedef void (^TTAlertTapedItem)(void);
 
 @property (nonatomic, copy, readonly) TTAlertMakerObjConfigCallBack sureText;
 
+/**
+ *  title
+ *  NSString/NSAttributeString
+ */
 @property (nonatomic, copy, readonly) TTAlertMakerObjConfigCallBack titleText;
 
+/**
+ * 内容
+ * NSString/NSAttributeString
+ */
 @property (nonatomic, copy, readonly) TTAlertMakerObjConfigCallBack contentText;
 
 /**

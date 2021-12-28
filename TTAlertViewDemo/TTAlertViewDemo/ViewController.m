@@ -43,8 +43,9 @@
 }
 
 - (IBAction)alertButtonClick:(id)sender {
+    NSAttributedString *contentAttrStr = [[NSAttributedString alloc] initWithString:@"去上班的女孩走红。视频中女孩为了踩点上班，一路狂奔冲到公司楼下，让不少网友直呼“不进国家队可惜了”。据李女士自" attributes:@{NSForegroundColorAttributeName: UIColor.blueColor}];
     [self ttAlertShowWithConfig:^(TTAlertMaker * _Nonnull maker) {
-        maker.titleText(@"提示").contentText(@"近日，新疆乌鲁木齐。一名狂奔去上班的女孩走红。视频中女孩为了踩点上班，一路狂奔冲到公司楼下，让不少网友直呼“不进国家队可惜了”。据李女士自己介绍，因为家住得离公司比较近，再加上平时早上起床比较困难，所以每次上班都是踩着点到公司，在路上基本上都是一路奔跑。老板和同事就把她每天跑步上班的画面拍了下来，让她成了公司的“网红”。甚至为了拍她上班奔跑的视频，同事和老板还专门提前上班在窗台上等待。").titleTextColor(UIColor.redColor).contentTextColor(UIColor.blueColor).cancelText(nil).show();
+        maker.titleText(@"notice").contentText(contentAttrStr).titleTextColor(UIColor.yellowColor).contentTextColor(UIColor.blueColor).cancelText(@"取消1").cancelTextColor(UIColor.cyanColor).show();
     } onSureCallBack:^{
         NSLog(@"---alert sure");
     } onCancelCallBack:^{
@@ -54,7 +55,7 @@
 
 - (IBAction)sheetButtonClick:(id)sender {
     [self ttActionSheetShowWithConfig:^(TTActionSheetMaker * _Nonnull maker) {
-        maker.itemTitles(@[@"123", @"456"]).cancelText(@"cancel").show();
+        maker.itemTitles(@[@"123", @"456"]).cancelText(@"cancel").contentText(@"sheet content").itemTitleColors(@[UIColor.blueColor]).titleText(@"this is a sheet").titleTextFont([UIFont systemFontOfSize:12]).titleTextColor(UIColor.cyanColor).contentTextColor(UIColor.redColor).show();
     } onSelectItem:^(NSInteger index) {
         NSLog(@"--- action sheet click: %ld", index);
     }];

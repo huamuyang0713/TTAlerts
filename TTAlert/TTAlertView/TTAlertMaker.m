@@ -21,7 +21,9 @@
 @property (nonatomic, strong) NSString *cancelStr;
 @property (nonatomic, strong) NSString *sureStr;
 @property (nonatomic, strong) NSString *titleStr;
+@property (nonatomic, strong) NSString *titleAttrStr;
 @property (nonatomic, strong) NSString *contentStr;
+@property (nonatomic, strong) NSString *contentAttrStr;
 
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIFont *contentFont;
@@ -68,7 +70,9 @@
     
     TTAlertViewController *alertVC = [TTAlertViewController alertControllerWithTitle:self.titleStr message:self.contentStr preferredStyle:UIAlertControllerStyleAlert];
     
-    if (self.titleStr && self.titleStr.length) {
+    if (self.titleAttrStr) {
+        [alertVC setValue:self.titleAttrStr forKey:@"attributedTitle"];
+    } else if (self.titleStr && self.titleStr.length) {
         NSMutableAttributedString *titleAttr = [[NSMutableAttributedString alloc] initWithString:self.titleStr];
         [titleAttr addAttributes:@{
             NSFontAttributeName: self.titleFont,
@@ -78,7 +82,9 @@
         [alertVC setValue:titleAttr forKey:@"attributedTitle"];
     }
     
-    if (self.contentStr && self.contentStr.length) {
+    if (self.contentAttrStr) {
+        [alertVC setValue:self.contentAttrStr forKey:@"attributedMessage"];
+    } else if (self.contentStr && self.contentStr.length) {
         NSMutableAttributedString *contentAttr = [[NSMutableAttributedString alloc] initWithString:self.contentStr];
         [contentAttr addAttributes:@{
             NSFontAttributeName: self.contentFont,
@@ -199,6 +205,9 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([i isKindOfClass:NSString.class]) {
             strongSelf.titleStr = i;
+        } else if ([i isKindOfClass:NSAttributedString.class]) {
+            strongSelf.titleStr = [(NSAttributedString *)i string];
+            strongSelf.titleAttrStr = i;
         }
         return strongSelf;
     };
@@ -211,6 +220,9 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if ([i isKindOfClass:NSString.class]) {
             strongSelf.contentStr = i;
+        } else if ([i isKindOfClass:NSAttributedString.class]) {
+            strongSelf.contentStr = [(NSAttributedString *)i string];
+            strongSelf.contentAttrStr = i;
         }
         return strongSelf;
     };
